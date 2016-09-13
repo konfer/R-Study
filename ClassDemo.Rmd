@@ -1,0 +1,98 @@
+---
+title: "ClassDemo"
+author: "konfer"
+date: "2016年9月12日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+```{r}
+
+require("base")
+
+my_variable <- 17
+class(my_variable)
+
+class(c(TRUE,FALSE))
+
+gender <- factor(c("male", "female", "female", "male", "female"))
+gender
+levels(gender)
+nlevels(gender)
+
+gender_char <- sample(c("female", "male"), 10000, replace = TRUE)
+class(gender_char)
+gender_fac <- as.factor(gender_char)
+object.size(gender_char)
+## 80136 bytes
+object.size(gender_fac)
+## 40512 bytes
+
+##检查类名
+is.character("red lorry, yellow lorry")
+## [1] TRUE
+is.logical(FALSE)
+## [1] TRUE
+is.list(list(a = 1, b = 2))
+## [1] TRUE
+
+as.numeric(13.9)
+
+##内循环须显式调用print
+ulams_spiral <- c(1, 8, 23, 46, 77)
+for(i in ulams_spiral)
+{
+  print(i)
+}
+
+num <- runif(30)##生成30 个均匀分布于0 和1 之间的随机数
+summary(num)##summary 函数就能为不同的数据类型提供汇总信息
+
+bool <- sample(c(TRUE, FALSE, NA), 30, replace = TRUE)
+fac <- factor(sample(letters[1:5],30,replace=TRUE))
+dfr <- data.frame(num,fac,bool)
+head(dfr)
+summary(dfr)
+
+str(num)
+
+str(dfr)
+
+unclass(fac)  ##显示变量构建过程
+
+##显示内部构造
+attributes(fac)
+View(fac)
+edit(fac)
+fix(fac)
+
+
+
+
+```
+
+
