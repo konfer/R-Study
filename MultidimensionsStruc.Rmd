@@ -65,6 +65,50 @@ which(x>10)## 返回索引位置
 which.max(x)
 which.min(x)
 
+rep(1:5,3)
+rep(1:5,each=3)
+rep(1:5,time=1:5)
+rep(1:5,length.out=7)
+rep.int(1:5,3)
+
+(three_array <- array(
+  1:24,
+  dim=c(4,3,2),
+  dimnames = list(
+    c("one", "two", "three", "four"),
+    c("ein", "zwei", "drei"),
+    c("un", "deux")
+  )
+))
+
+(a_matrix <- matrix(
+  1:12,
+  nrow = 4,
+  dimnames = list(
+    c("one", "two", "three", "four"),
+    c("ein", "zwei", "drei")
+  )
+))
+
+dim(three_array)
+ncol(three_array)
+nrow(three_array)
+
+a_matrix[1,c("ein","zwei")]
+
+(another_matrix <- matrix(
+seq.int(2, 24, 2),
+nrow = 4,
+dimnames = list(
+c("five", "six", "seven", "eight"),
+c("vier", "funf", "sechs")
+)
+))
+
+c(a_matrix, another_matrix)
+cbind(a_matrix, another_matrix)
+rbind(a_matrix, another_matrix)
+
 
 
 
