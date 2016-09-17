@@ -60,21 +60,44 @@ is.recursive(list())
 is.atomic(numeric())
 is.recursive(numeric())
 
+l <- list(
+  first=1,
+  second=2,
+  third=list(
+    alpha=3.1,
+    beta=3.2
+  )
+)
 
+##索引
+l[-2]
+l["second"]
+l[c("first","second")]
+l[c(TRUE,FALSE,TRUE)]
+ex_list <- l[1:2] #
+ex_list
 
+l[[1]]
+l[["first"]]
 
+l$second
+l[["third"]][["alpha"]]
+l[[c("third","alpha")]]
 
+##list与向量转换
+busy_beaver <- c(1,6,21,107)
+as.list(busy_beaver)
 
+c(list(a=1,b=2),list(3))
+c(list(a=1,b=2),3)
 
+length(NULL)
+length(NA)
 
-
-
-
-
-
+is.null(NULL)
+is.null(NA)
 
 ···
-
 
 
 
